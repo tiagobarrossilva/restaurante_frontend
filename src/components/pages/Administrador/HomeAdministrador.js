@@ -24,13 +24,8 @@ function HomeAdministrador(){
     return(
         <section className={styles.form_container}>
             <h1>Home do adm</h1>
-            {/* <p>{<Link to="/registrar">Cadastrar novo usuario</Link>}</p> */}
-            <p>{<Link to="/funcionarios">Funcionarios</Link>}</p>
-            <p>{<Link to="/vendas">Vendas</Link>}</p>
-            <p>{<Link to="/cardapio">Cardapio</Link>}</p>
-            
-            
-
+            <span>Aréa para relatorio</span><br/>
+            <span>Colocar algum relatorio simplificado aqui</span>
         </section>
     )
 

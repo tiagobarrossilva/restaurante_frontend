@@ -1,5 +1,9 @@
 import { Link } from "react-router-dom"
 
+import Administrador from "../botoesNavbar/Administrador"
+
+import Caixa from "../botoesNavbar/Caixa"
+
 // necessario para usar contextos
 import { useContext } from "react"
 
@@ -17,7 +21,7 @@ function Navbar(){
         nome: '',
         tipo: ''
     }
-
+      
     usuarioAutenticado = usuarioLogado()
 
     return(
@@ -28,10 +32,18 @@ function Navbar(){
             </div>
             <ul>
                
-                
                 {authenticated ? (
                 <>
                 <li onClick={homeUsuario}>Home</li>
+
+                {usuarioAutenticado.tipo == "Administrador" &&(
+                    <Administrador/>
+                )}
+
+                {usuarioAutenticado.tipo == "Caixa" &&(
+                    <Caixa/>
+                )}
+
                 <li>{usuarioAutenticado.tipo}</li>
                 <li>{usuarioAutenticado.nome}</li>
                 <li onClick={logout}>Sair</li>
