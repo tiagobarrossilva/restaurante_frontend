@@ -1,13 +1,9 @@
 import {useContext, useState} from 'react'
-
 import Input from "../../form/Input"
-
 import styles from "../../form/Form.module.css"
 
 // contextos
 import { Context } from '../../../context/UserContext'
-
-
 
 function Registrar(){
     const [user, setUser] = useState({})
@@ -61,7 +57,6 @@ function Registrar(){
             </form>
         </section>
     )
-
 }
 
 export default Registrar

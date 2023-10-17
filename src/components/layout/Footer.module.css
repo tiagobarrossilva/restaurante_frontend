@@ -1,9 +1,15 @@
 .footer {
-    height: 15em;
+    height: 12rem;
     display: flex;
+
+    /* usado para alinhar verticalmente */
     align-items: center;
+
+    /* usuado para alinhar horizontalmente */
     justify-content: center;
-    background-color: #eee;
-    color: #444;
-    border-top: 0.1em solid black
+
+    background-color: #444;
+    color: white;
+    font-weight: bolder;
+    border-top: 0.1rem solid black
 }

@@ -1,30 +1,26 @@
-import {useContext, useState} from 'react'
-import { Link } from "react-router-dom"
-
 import Input from "../../form/Input"
-
 import styles from "../../pages/Administrador/AdicionarAoCardapio.module.css"
 
-// contextos
-import { Context } from '../../../context/UserContext'
+import {useContext, useState} from 'react'
+
 
 function AdicionarAoCardapio(){
-    // const [user, setUser] = useState({})
-    // const {login} = useContext(Context)
+    const [item, setItem] = useState({})
 
-    // function handleChange(e){
-    //     setUser({...user, [e.target.name]: e.target.value})
-    // }
+    function handleChange(e){
+        setItem({...item, [e.target.name]: e.target.value})
+    }
 
     function handleSubmit(e){
         e.preventDefault()
-        // login(user)
-        console.log('testando')
+        console.log(item)
+        // enviar o item para o banco
+        //registrar(item)
     }
 
     return(
         <section className={styles.form_container}>
-            <p>formulario para adicionar item ao cardapio</p>
+            <h2>Adicionar item ao cardapio</h2>
 
             <form onSubmit={handleSubmit}>
                 <Input
@@ -32,42 +28,40 @@ function AdicionarAoCardapio(){
                     type="Number"
                     name="id"
                     placeholder="Digite o id"
-                    // haldleOnChange={handleChange}
+                    haldleOnChange={handleChange}
                 />
                 <Input
                     text="Nome"
                     type="text"
                     name="nome"
                     placeholder="Digite o nome"
-                    // haldleOnChange={handleChange}
+                    haldleOnChange={handleChange}
                 />
                 <Input
                     text="Descrição"
                     type="text"
                     name="descricao"
                     placeholder="Digite a descrição"
-                    // haldleOnChange={handleChange}
+                    haldleOnChange={handleChange}
                 />
                 <Input
                     text="Preço"
                     type="Number"
                     name="preco"
                     placeholder="Digite o preço"
-                    // haldleOnChange={handleChange}
+                    haldleOnChange={handleChange}
                 />
                 <Input
                     text="Tipo"
                     type="Number"
                     name="tipo"
                     placeholder="Digite o tipo"
-                    // haldleOnChange={handleChange}
+                    haldleOnChange={handleChange}
                 />
                 <input type="submit" value="Adicionar item ao cardapio"/>
             </form>
-
         </section>
     )
-
 }
 
 export default AdicionarAoCardapio

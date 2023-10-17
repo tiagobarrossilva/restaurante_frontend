@@ -9,7 +9,7 @@ import { useContext } from "react"
 
 import styles from "./Navbar.module.css"
 
-import logomarca from "../../assets/img/logomarca_pet.jpg"
+import logomarca from "../../assets/img/logo.png"
 
 // contextos
 import { Context } from "../../context/UserContext"
@@ -27,34 +27,33 @@ function Navbar(){
     return(
         <nav className={styles.navbar}>
             <div className={styles.navbar_logo}>
-                <img src={logomarca} alt="Get a Pet"/>
-                <h2>Restaurante</h2>
+                <img src={logomarca} alt=""/>
             </div>
             <ul>
-               
                 {authenticated ? (
                 <>
-                <li onClick={homeUsuario}>Home</li>
+                    <li onClick={homeUsuario}>Home</li>
 
-                {usuarioAutenticado.tipo == "Administrador" &&(
-                    <Administrador/>
-                )}
+                    {usuarioAutenticado.tipo == "Administrador" &&(
+                        <Administrador/>
+                    )}
 
-                {usuarioAutenticado.tipo == "Caixa" &&(
-                    <Caixa/>
-                )}
+                    {usuarioAutenticado.tipo == "Caixa" &&(
+                        <Caixa/>
+                    )}
 
-                <li>{usuarioAutenticado.tipo}</li>
-                <li>{usuarioAutenticado.nome}</li>
-                <li onClick={logout}>Sair</li>
+                    <li>{usuarioAutenticado.tipo}</li>
+                    <li>{usuarioAutenticado.nome}</li>
+                    <li onClick={logout}>Sair</li>
                 </>
                 )
                 :
                 (
                 <>
-                <li><Link to="/login">Entrar</Link></li>
+                    <li><Link to="/login">Entrar</Link></li>
                 </>
-                )}
+                )
+                }
             </ul>
         </nav>
     )
