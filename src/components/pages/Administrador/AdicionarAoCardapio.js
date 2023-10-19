@@ -1,10 +1,14 @@
 import Input from "../../form/Input"
 import styles from "../../pages/Administrador/AdicionarAoCardapio.module.css"
 
+import useItem from "../../../hooks/useItem"
+
 import {useContext, useState} from 'react'
 
-
 function AdicionarAoCardapio(){
+
+    const {adicionarItem} = useItem()
+
     const [item, setItem] = useState({})
 
     function handleChange(e){
@@ -14,8 +18,9 @@ function AdicionarAoCardapio(){
     function handleSubmit(e){
         e.preventDefault()
         console.log(item)
+
         // enviar o item para o banco
-        //registrar(item)
+        adicionarItem(item)
     }
 
     return(
@@ -48,6 +53,7 @@ function AdicionarAoCardapio(){
                     text="Preço"
                     type="Number"
                     name="preco"
+                    step="0.01"
                     placeholder="Digite o preço"
                     haldleOnChange={handleChange}
                 />

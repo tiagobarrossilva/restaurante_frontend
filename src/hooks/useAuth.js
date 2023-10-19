@@ -1,10 +1,8 @@
 import api from "../utils/api"
-
 import { useState, useEffect } from "react"
 
 // o useHistory foi removido da versão mais nova do react, usar: useNavigate
 import { useNavigate } from 'react-router-dom'
-
 import useFlashMessage from './useFlashMessage'
 
 export default function useAuth(){

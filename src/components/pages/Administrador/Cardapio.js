@@ -5,7 +5,8 @@ function Cardapio(){
     return(
         <section className={styles.form_container}>
             <h3>Gerenciamento de Cardapio</h3>
-            <p>{<Link to="/adicionar-ao-cardapio">Adicionar item ao cardapio</Link>}</p>
+            <p>{<Link to="/adicionar-ao-cardapio">Adicionar item ao cardapio</Link>}</p><br></br>
+            <p>{<Link to="/url">Exibir itens cardapio (pendente)</Link>}</p>
         </section>
     )
 }
