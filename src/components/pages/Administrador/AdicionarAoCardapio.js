@@ -1,9 +1,7 @@
+import {useState} from 'react'
 import Input from "../../form/Input"
 import styles from "../../pages/Administrador/AdicionarAoCardapio.module.css"
-
 import useItem from "../../../hooks/useItem"
-
-import {useContext, useState} from 'react'
 
 function AdicionarAoCardapio(){
 
@@ -17,8 +15,7 @@ function AdicionarAoCardapio(){
 
     function handleSubmit(e){
         e.preventDefault()
-        console.log(item)
-
+        
         // enviar o item para o banco
         adicionarItem(item)
     }
@@ -26,7 +23,6 @@ function AdicionarAoCardapio(){
     return(
         <section className={styles.form_container}>
             <h2>Adicionar item ao cardapio</h2>
-
             <form onSubmit={handleSubmit}>
                 <Input
                     text="Id"

@@ -18,6 +18,7 @@ import Funcionarios from "./components/pages/Administrador/Funcionarios";
 import Vendas from "./components/pages/Administrador/Vendas";
 import Cardapio from "./components/pages/Administrador/Cardapio";
 import AdicionarAoCardapio from "./components/pages/Administrador/AdicionarAoCardapio"
+import ItensCardapio from "./components/pages/Administrador/ItensCardapio";
 
 // contextos
 import { UserProvider } from "./context/UserContext";
@@ -40,6 +41,7 @@ function App() {
           <Route path="/vendas" element={<Vendas/>}/>
           <Route path="/cardapio" element={<Cardapio/>}/>
           <Route path="/adicionar-ao-cardapio" element={<AdicionarAoCardapio/>}/>
+          <Route path="/itens-cardapio" element={<ItensCardapio/>}/>
           <Route path="/" element={<Home/>}/>
         </Routes>
       </Container>

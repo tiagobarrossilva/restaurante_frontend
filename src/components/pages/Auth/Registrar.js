@@ -16,7 +16,7 @@ function Registrar(){
 
     function handleSubmit(e){
         e.preventDefault()
-        console.log(user)
+    
         // enviar o usuario para o banco
         registrar(user)
     }

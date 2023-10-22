@@ -34,5 +34,16 @@ export default function useItem(){
         }
     }
 
-    return {adicionarItem}
+    async function consultarItens(){
+        try{
+            const itens = await api.get('/item').then((response) =>{
+                return response.data.itens
+            })
+            return itens
+        } catch(error){
+            setFlashMessage(error.response.data.message, 'error')
+        }
+    }
+
+    return {adicionarItem, consultarItens}
 }
