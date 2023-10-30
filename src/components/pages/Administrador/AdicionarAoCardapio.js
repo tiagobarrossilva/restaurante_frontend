@@ -1,6 +1,7 @@
 import {useState} from 'react'
 import Input from "../../form/Input"
 import styles from "../../pages/Administrador/AdicionarAoCardapio.module.css"
+import stylesForm from "../../form/Form.module.css"
 import useItem from "../../../hooks/useItem"
 
 function AdicionarAoCardapio(){
@@ -21,14 +22,14 @@ function AdicionarAoCardapio(){
     }
 
     return(
-        <section className={styles.form_container}>
-            <h2>Adicionar item ao cardapio</h2>
+        <section className={stylesForm.form_container}>
+            <h1>Adicionar item ao cardapio</h1>
             <form onSubmit={handleSubmit}>
                 <Input
-                    text="Id"
+                    text="Código do item"
                     type="Number"
                     name="id"
-                    placeholder="Digite o id"
+                    placeholder="Digite o codigo"
                     haldleOnChange={handleChange}
                 />
                 <Input
@@ -60,6 +61,7 @@ function AdicionarAoCardapio(){
                     placeholder="Digite o tipo"
                     haldleOnChange={handleChange}
                 />
+             
                 <input type="submit" value="Adicionar item ao cardapio"/>
             </form>
         </section>

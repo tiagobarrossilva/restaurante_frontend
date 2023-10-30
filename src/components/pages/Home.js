@@ -2,7 +2,7 @@ function Home(){
     return(
         <section>
             <h1>Tela inicial</h1>
-            <p>colocar uma logomarca e etc</p>
+            <p>tela inicial colocar alguma informação aqui</p>
         </section>
     )
 }

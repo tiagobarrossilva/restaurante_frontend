@@ -1,14 +1,11 @@
 import { Link } from "react-router-dom"
-
 import Administrador from "../botoesNavbar/Administrador"
-
 import Caixa from "../botoesNavbar/Caixa"
 
 // necessario para usar contextos
 import { useContext } from "react"
 
 import styles from "./Navbar.module.css"
-
 import logomarca from "../../assets/img/logo.png"
 
 // contextos

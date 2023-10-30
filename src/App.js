@@ -16,7 +16,6 @@ import HomeCaixa from "./components/pages/Caixa/HomeCaixa";
 import HomeCozinha from "./components/pages/Cozinha/HomeCozinha";
 import Funcionarios from "./components/pages/Administrador/Funcionarios";
 import Vendas from "./components/pages/Administrador/Vendas";
-import Cardapio from "./components/pages/Administrador/Cardapio";
 import AdicionarAoCardapio from "./components/pages/Administrador/AdicionarAoCardapio"
 import ItensCardapio from "./components/pages/Administrador/ItensCardapio";
 
@@ -39,7 +38,6 @@ function App() {
           <Route path="/home-caixa" element={<HomeCaixa/>}/>
           <Route path="/home-cozinha" element={<HomeCozinha/>}/>
           <Route path="/vendas" element={<Vendas/>}/>
-          <Route path="/cardapio" element={<Cardapio/>}/>
           <Route path="/adicionar-ao-cardapio" element={<AdicionarAoCardapio/>}/>
           <Route path="/itens-cardapio" element={<ItensCardapio/>}/>
           <Route path="/" element={<Home/>}/>

@@ -7,7 +7,6 @@ import { Context } from '../../../context/UserContext'
 
 function Registrar(){
     const [user, setUser] = useState({})
-
     const {registrar} = useContext(Context)
 
     function handleChange(e){

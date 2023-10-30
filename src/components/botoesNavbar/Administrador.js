@@ -6,7 +6,7 @@ function Administrador(){
         <>
             <li><Link to="/funcionarios">Funcionarios</Link></li>
             <li><Link to="/vendas">Vendas</Link></li>
-            <li><Link to="/cardapio">Cardapio</Link></li>
+            <li><Link to="/itens-cardapio">Cardapio</Link></li>
         </>
     )
 }

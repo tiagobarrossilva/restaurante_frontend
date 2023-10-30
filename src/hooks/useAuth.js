@@ -27,7 +27,7 @@ export default function useAuth(){
 
     async function registrar(usuario){
         try{
-            await api.post('/usuario/adicionar',usuario).then((response) =>{
+            await api.post('/usuario',usuario).then((response) =>{
             return response.data
             })
             navigate('/home-administrador')

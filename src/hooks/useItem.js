@@ -35,14 +35,17 @@ export default function useItem(){
     }
 
     async function consultarItens(){
+        let itens2
         try{
             const itens = await api.get('/item').then((response) =>{
                 return response.data.itens
             })
-            return itens
+            //return itens
+            itens2 = itens
         } catch(error){
             setFlashMessage(error.response.data.message, 'error')
         }
+        return itens2
     }
 
     return {adicionarItem, consultarItens}

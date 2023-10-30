@@ -5,7 +5,6 @@ function Caixa(){
     return(
         <>
             <li><Link to="/teste-caixa">Icones do caixa</Link></li>
-            
         </>
     )
 }
