@@ -2,7 +2,7 @@ import styles from "../../pages/Caixa/HomeCaixa.module.css"
 
 function HomeCaixa(){
     return(
-        <section className={styles.form_container}>
+        <section className={styles.HomeCaixa}>
             <h1>Home caixa</h1>
         </section>
     )

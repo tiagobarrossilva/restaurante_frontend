@@ -2,7 +2,7 @@ import styles from "../../pages/Garcon/HomeGarcon.module.css"
 
 function HomeGarcon(){
     return(
-        <section className={styles.form_container}>
+        <section className={styles.HomeGarcon}>
             <h1>Home do garçon</h1>
             <div>
                 <button type="button">Vendas abertas</button>

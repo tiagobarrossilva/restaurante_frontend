@@ -1,0 +1,10 @@
+.ModalExcluir {
+    position: absolute;
+    
+    width: 30rem;
+    height: 15rem;
+    background-color: bisque;
+
+    top: 10rem;
+    left: 30rem;
+}

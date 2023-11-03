@@ -3,7 +3,7 @@ import styles from "../../pages/Administrador/Funcionarios.module.css"
 
 function Funcionarios(){
     return(
-        <section className={styles.form_container}>
+        <section className={styles.Funcionarios}>
             <h1>Gerenciamento de Funcionarios</h1>
             <p>{<Link to="/registrar">Cadastrar novo funcionario</Link>}</p>
         </section>
