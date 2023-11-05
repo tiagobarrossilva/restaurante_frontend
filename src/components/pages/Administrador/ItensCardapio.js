@@ -63,7 +63,7 @@ function ItensCardapio(){
                 Authorization: `Bearer ${JSON.parse(token)}`,
             },
         }).then((response)=>{
-            const itensAtualizados = itens.filter((item)=> item._id != id)
+            const itensAtualizados = itens2.filter((item)=> item._id != id)
             setItem(itensAtualizados)
             setItem2(itensAtualizados)
             setModalExcluir(false)
@@ -102,8 +102,12 @@ function ItensCardapio(){
                             <p>Nome: {item.nome}</p>
                             <p>Descrição: {item.descricao}</p>
                             <p>Preço: {item.preco}</p>
-                            <p>Tipo: {item.tipo}</p>
-                            <button onClick={()=>selecionarItemExcluir(item.nome,item._id)}>excluir</button>
+                            {item.tipo == 1 && <p>Comida</p>}
+                            {item.tipo == 2 && <p>Bebida</p>}
+                            {item.tipo == 3 && <p>Sobremesa</p>}
+                            {item.tipo == 4 && <p>Diversos</p>}
+                            <button >Editar</button>
+                            <button onClick={()=>selecionarItemExcluir(item.nome,item._id)}>Excluir</button>
                             <br/><br/>
                         </div>
                     ))

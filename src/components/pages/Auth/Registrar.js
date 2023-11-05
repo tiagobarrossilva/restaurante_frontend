@@ -45,13 +45,22 @@ function Registrar(){
                     placeholder="Digite a senha"
                     haldleOnChange={handleChange}
                 />
-                <Input
+                {/* <Input
                     text="Tipo"
                     type="text"
                     name="tipo"
                     placeholder="Digite o tipo de usuario"
                     haldleOnChange={handleChange}
-                />
+                /> */}
+
+                <label>Tipo:</label><br/>
+                <select name={"tipo"} onChange={handleChange}>
+                    <option defaultValue="0">...</option>
+                    <option value="1">Administrador</option>
+                    <option value="2">Garçon</option>
+                    <option value="3">Caixa</option>
+                    <option value="4">Cozinha</option>
+                </select>
                 <input type="submit" value="cadastrar"/>
             </form>
         </section>
