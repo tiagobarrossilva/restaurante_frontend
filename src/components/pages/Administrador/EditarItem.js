@@ -1,15 +1,40 @@
-import {useState} from 'react'
+import {useState, useEffect} from 'react'
 import Input from "../../form/Input"
 import styles from "../../pages/Administrador/EditarItens.module.css"
 import stylesForm from "../../form/Form.module.css"
 import api from '../../../utils/api'
 import useFlashMessage from '../../../hooks/useFlashMessage'
+import { useParams } from 'react-router-dom'
 
 // o useHistory foi removido da versão mais nova do react, usar: useNavigate
 import { useNavigate } from 'react-router-dom'
 
 function EditarItem(){
-    const [item, setItem] = useState({})
+    const [token] = useState(localStorage.getItem('token') || '')
+    const {setFlashMessage} = useFlashMessage()
+    const navigate = useNavigate();
+   
+
+    async function editarItem(item){
+        let msgType = 'success'
+        const data = await api.patch(`/item/${id}`,item,{
+            headers: {
+                Authorization: `Bearer ${JSON.parse(token)}`,
+            },
+        }).then((response) =>{
+            navigate('/itens-cardapio')
+            return response.data
+        }).catch((erro)=>{
+            msgType = 'error'
+            return erro.response.data
+        })
+        setFlashMessage(data.message, msgType)
+        
+    }
+
+    const {id, nome, descricao,preco, tipo} = useParams()
+    
+    const [item, setItem] = useState({_id: id,nome: nome,descricao: descricao,preco: preco,tipo: tipo})
 
     function handleChange(e){
         setItem({...item, [e.target.name]: e.target.value})
@@ -17,16 +42,19 @@ function EditarItem(){
 
     function handleSubmit(e){
         e.preventDefault()
-        
+        console.log(item)
+
+        editarItem(item)
+
         // enviar o item para o banco
-        //adicionarItem(item)
-        //console.log(tipoItem)
-        //console.log(item)
+
+        
     }
 
     return(
         <section className={styles.EditarItem}>
-            <h1>Editar item ao cardapio</h1>
+            <h1>Editar o item: {nome}</h1>
+            
             <div className={stylesForm.form_container}>
                 <form onSubmit={handleSubmit}>
                     <Input
@@ -34,6 +62,7 @@ function EditarItem(){
                         type="Number"
                         name="id"
                         placeholder="Digite o codigo"
+                        value={id}
                         haldleOnChange={handleChange}
                     />
                     <Input
@@ -41,6 +70,7 @@ function EditarItem(){
                         type="text"
                         name="nome"
                         placeholder="Digite o nome"
+                        defaultValue={nome}
                         haldleOnChange={handleChange}
                     />
                     <Input
@@ -48,6 +78,7 @@ function EditarItem(){
                         type="text"
                         name="descricao"
                         placeholder="Digite a descrição"
+                        defaultValue={descricao}
                         haldleOnChange={handleChange}
                     />
                     <Input
@@ -55,21 +86,13 @@ function EditarItem(){
                         type="Number"
                         name="preco"
                         step="0.01"
+                        defaultValue={preco}
                         placeholder="Digite o preço"
                         haldleOnChange={handleChange}
                     />
 
-                    {/* <Input
-                        text="Tipo"
-                        type="Number"
-                        name="tipo"
-                        placeholder="Digite o tipo"
-                        haldleOnChange={handleChange}
-                    /> */}
-
                     <label>Tipo:</label><br/>
-                    <select name={"tipo"} onChange={handleChange}>
-                        <option defaultValue="0">...</option>
+                    <select name={"tipo"} onChange={handleChange} defaultValue={tipo}>
                         <option value="1">Comida</option>
                         <option value="2">Bebida</option>
                         <option value="3">Sobremesa</option>

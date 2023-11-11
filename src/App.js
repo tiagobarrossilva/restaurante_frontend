@@ -41,7 +41,7 @@ function App() {
           <Route path="/vendas" element={<Vendas/>}/>
           <Route path="/adicionar-ao-cardapio" element={<AdicionarAoCardapio/>}/>
           <Route path="/itens-cardapio" element={<ItensCardapio/>}/>
-          <Route path="/editar-item" element={<EditarItem/>}/>
+          <Route path="/editar-item/:id/:nome/:descricao/:preco/:tipo" element={<EditarItem/>}/>
           <Route path="/" element={<Home/>}/>
         </Routes>
       </Container>

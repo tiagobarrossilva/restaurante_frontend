@@ -1,0 +1,75 @@
+.home-banner-container {
+  background: linear-gradient(rgba(54,40,3,.8),rgba(0,0,0,.8)), url("../../assets/img/file4.jpg");
+  position: relative;
+  display: flex;
+  padding-top: 2rem;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+}
+
+
+.primary-heading {
+  font-size: clamp(2rem, 5vw, 4rem);
+  color: #ffffff;
+  max-width: 600px;
+}
+
+.primary-text {
+  font-size: clamp(1rem, 3vw, 1.5rem);
+  max-width: 600px;
+  color: #ffffff;
+  margin: 1.5rem 0rem;
+  text-align: justify;
+}
+
+/*-----------------------------*/
+#key-benefits h2 {
+  background-color: #ffd400;
+  text-align: center;
+  padding: 2em;
+  font-weight: 500;
+  color: #362803;
+}
+
+.benefits {
+  display: flex;
+  justify-content: space-around;
+  padding: 4em;
+  width: 80%;
+  margin: 0 auto;
+}
+
+.benefit {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  max-width: 20%;
+  color: var(--text-tertiary);
+}
+
+.benefit .benefit-img {
+  width: 250px;
+  height: 250px;
+  border-radius: 50%;
+  background-size: cover;
+  background-position: center;
+  margin-bottom: 1em;
+}
+
+#benefit-1 {
+  background-image: url("../../assets/img/file4.jpg");
+}
+
+#benefit-2 {
+  background-image: url("../../assets/img/file4.jpg");
+}
+
+#benefit-3 {
+  background-image: url("../../assets/img/file4.jpg");
+}
+
+#benefit-4 {
+  background-image: url("../../assets/img/file4.jpg");
+}

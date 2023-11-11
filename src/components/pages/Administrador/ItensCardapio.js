@@ -106,7 +106,7 @@ function ItensCardapio(){
                             {item.tipo == 2 && <p>Bebida</p>}
                             {item.tipo == 3 && <p>Sobremesa</p>}
                             {item.tipo == 4 && <p>Diversos</p>}
-                            <button >Editar</button>
+                            <button ><Link to={`/editar-item/${item._id}/${item.nome}/${item.descricao}/${item.preco}/${item.tipo}`}>Editar</Link></button>
                             <button onClick={()=>selecionarItemExcluir(item.nome,item._id)}>Excluir</button>
                             <br/><br/>
                         </div>
