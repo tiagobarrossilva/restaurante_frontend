@@ -4,7 +4,7 @@ import styles from "../../pages/Administrador/EditarItens.module.css"
 import stylesForm from "../../form/Form.module.css"
 import api from '../../../utils/api'
 import useFlashMessage from '../../../hooks/useFlashMessage'
-import { useParams } from 'react-router-dom'
+import { useParams, Link } from 'react-router-dom'
 
 // o useHistory foi removido da versão mais nova do react, usar: useNavigate
 import { useNavigate } from 'react-router-dom'
@@ -29,7 +29,6 @@ function EditarItem(){
             return erro.response.data
         })
         setFlashMessage(data.message, msgType)
-        
     }
 
     const {id, nome, descricao,preco, tipo} = useParams()
@@ -42,13 +41,7 @@ function EditarItem(){
 
     function handleSubmit(e){
         e.preventDefault()
-        console.log(item)
-
         editarItem(item)
-
-        // enviar o item para o banco
-
-        
     }
 
     return(
@@ -99,7 +92,8 @@ function EditarItem(){
                         <option value="4">Diversos</option>
                     </select>
                     
-                    <input type="submit" value="Adicionar item ao cardapio"/>
+                    <button><Link to="/itens-cardapio">Cancelar</Link></button>
+                    <input type="submit" value="Salvar alterações"/>
                 </form>
             </div>
             

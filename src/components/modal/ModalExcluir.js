@@ -1,12 +1,20 @@
 import styles from "../../components/modal/ModalExcluir.module.css"
 
-function ModalExcluir({nomeItem,exibirModalExcluir,idItem, excluirItem}){
+function ModalExcluir({tipoModal, exibirModalExcluir, nome, id, excluirItem}){
     return(
         <div className={styles.ModalExcluir}>
-            <p>excluir o item {nomeItem}</p><br/>
-            <p>id do item: {idItem}</p>
-            <button onClick={exibirModalExcluir}>Cancelar</button>
-            <button onClick={()=> excluirItem(idItem)}>Excluir</button>
+            {tipoModal == 'itens' &&<>
+                <p>excluir o item {nome}</p><br/>
+                <p>id do item: {id}</p>
+                <button onClick={exibirModalExcluir}>Cancelar</button>
+                <button onClick={()=> excluirItem(id)}>Excluir</button>
+            </>}
+
+            {tipoModal == 'funcionarios' &&<>
+                <p>excluir o funcionario de id: {id}</p>
+                <p>Nome do funcionario: {nome}</p>
+                <button onClick={exibirModalExcluir}>Cancelar</button>
+            </>}
         </div>
     )
 }

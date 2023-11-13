@@ -89,7 +89,7 @@ function ItensCardapio(){
 
             {modalExcluir &&
                 createPortal(
-                    <ModalExcluir nomeItem={modalItem} exibirModalExcluir={exibirModalExcluir} idItem={modalIdItem} excluirItem={excluirItem}/>,
+                    <ModalExcluir tipoModal='itens' exibirModalExcluir={exibirModalExcluir} nome={modalItem}  id={modalIdItem} excluirItem={excluirItem}/>,
                     document.body
                 )
             }
