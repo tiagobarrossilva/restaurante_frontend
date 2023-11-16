@@ -13,8 +13,9 @@ function EditarItem(){
     const [token] = useState(localStorage.getItem('token') || '')
     const {setFlashMessage} = useFlashMessage()
     const navigate = useNavigate();
+    const {id, nome, descricao,preco, tipo} = useParams()
+    const [item, setItem] = useState({_id: id,nome: nome,descricao: descricao,preco: preco,tipo: tipo})
    
-
     async function editarItem(item){
         let msgType = 'success'
         const data = await api.patch(`/item/${id}`,item,{
@@ -31,10 +32,6 @@ function EditarItem(){
         setFlashMessage(data.message, msgType)
     }
 
-    const {id, nome, descricao,preco, tipo} = useParams()
-    
-    const [item, setItem] = useState({_id: id,nome: nome,descricao: descricao,preco: preco,tipo: tipo})
-
     function handleChange(e){
         setItem({...item, [e.target.name]: e.target.value})
     }
@@ -47,7 +44,6 @@ function EditarItem(){
     return(
         <section className={styles.EditarItem}>
             <h1>Editar o item: {nome}</h1>
-            
             <div className={stylesForm.form_container}>
                 <form onSubmit={handleSubmit}>
                     <Input

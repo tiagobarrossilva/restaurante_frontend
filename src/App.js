@@ -19,6 +19,7 @@ import Vendas from "./components/pages/Administrador/Vendas";
 import AdicionarAoCardapio from "./components/pages/Administrador/AdicionarAoCardapio"
 import ItensCardapio from "./components/pages/Administrador/ItensCardapio";
 import EditarItem from "./components/pages/Administrador/EditarItem";
+import EditarFuncionario from "./components/pages/Administrador/EditarFuncionario";
 
 // contextos
 import { UserProvider } from "./context/UserContext";
@@ -42,6 +43,7 @@ function App() {
           <Route path="/adicionar-ao-cardapio" element={<AdicionarAoCardapio/>}/>
           <Route path="/itens-cardapio" element={<ItensCardapio/>}/>
           <Route path="/editar-item/:id/:nome/:descricao/:preco/:tipo" element={<EditarItem/>}/>
+          <Route path="/editar-funcionario/:id/:nome/:tipo" element={<EditarFuncionario/>}/>
           <Route path="/" element={<Home/>}/>
         </Routes>
       </Container>

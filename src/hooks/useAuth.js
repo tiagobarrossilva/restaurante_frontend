@@ -30,7 +30,7 @@ export default function useAuth(){
             await api.post('/usuario',usuario).then((response) =>{
             return response.data
             })
-            navigate('/home-administrador')
+            navigate('/funcionarios')
             setFlashMessage('Cadastro realizado com sucesso', 'success')
         } catch(error){
             setFlashMessage(error.response.data.message, 'error')

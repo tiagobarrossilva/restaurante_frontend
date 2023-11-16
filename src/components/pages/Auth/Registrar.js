@@ -45,14 +45,6 @@ function Registrar(){
                     placeholder="Digite a senha"
                     haldleOnChange={handleChange}
                 />
-                {/* <Input
-                    text="Tipo"
-                    type="text"
-                    name="tipo"
-                    placeholder="Digite o tipo de usuario"
-                    haldleOnChange={handleChange}
-                /> */}
-
                 <label>Tipo:</label><br/>
                 <select name={"tipo"} onChange={handleChange}>
                     <option defaultValue="0">...</option>

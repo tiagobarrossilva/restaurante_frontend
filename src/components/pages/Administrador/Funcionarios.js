@@ -2,6 +2,7 @@ import { Link } from "react-router-dom"
 import styles from "../../pages/Administrador/Funcionarios.module.css"
 import { useState,useEffect } from "react"
 import api from "../../../utils/api"
+import useFlashMessage from "../../../hooks/useFlashMessage"
 
 import ModalExcluir from "../../modal/ModalExcluir"
 import { createPortal } from 'react-dom'
@@ -10,9 +11,11 @@ function Funcionarios(){
     const [token] = useState(localStorage.getItem('token') || '')
     const [usuarios,setUsuarios] = useState([])
     const [usuarios2,setUsuarios2] = useState([])
+    const {setFlashMessage} = useFlashMessage()
 
     const [modalExcluir,setModalExcluir] = useState(false)
-    
+    const [modalUsuario,setModalUsuario] = useState('')
+    const [modalIdUsuario,setModalIdUsuario] = useState('')
 
     useEffect(() =>{
         api.get('/usuario',{
@@ -43,6 +46,31 @@ function Funcionarios(){
         setModalExcluir(!modalExcluir)
     }
 
+    function selecionarFuncionarioExcluir(nome,id){
+            setModalUsuario(nome)
+            setModalIdUsuario(id)
+            exibirModalExcluir()
+    }
+
+    async function excluir(id){
+        let msgType = 'success'
+        const data = await api.delete(`/usuario/${id}`,{
+            headers: {
+                Authorization: `Bearer ${JSON.parse(token)}`,
+            },
+        }).then((response)=>{
+            const usuariosAtualizados = usuarios2.filter((usuario)=> usuario._id != id)
+            setUsuarios(usuariosAtualizados)
+            setUsuarios2(usuariosAtualizados)
+            setModalExcluir(false)
+            return response.data
+        }).catch((erro)=>{
+            msgType = 'error'
+            return erro.response.data
+        })
+        setFlashMessage(data.message, msgType)
+    }
+
     return(
         <section className={styles.Funcionarios}>
             <h1>Gerenciamento de Funcionarios</h1>
@@ -57,7 +85,7 @@ function Funcionarios(){
 
             {modalExcluir &&
                 createPortal(
-                    <ModalExcluir tipoModal='funcionarios' exibirModalExcluir={exibirModalExcluir}/>,
+                    <ModalExcluir tipoModal='funcionarios' exibirModalExcluir={exibirModalExcluir} nome={modalUsuario}  id={modalIdUsuario} excluir={excluir}/>,
                     document.body
                 )
             }
@@ -72,7 +100,8 @@ function Funcionarios(){
                             {usuario.tipo == 2 && <p>Garçon</p>}
                             {usuario.tipo == 3 && <p>Caixa</p>}
                             {usuario.tipo == 4 && <p>Cozinha</p>}
-                            <button onClick={exibirModalExcluir}>Excluir</button>
+                            <button ><Link to={`/editar-funcionario/${usuario._id}/${usuario.nome}/${usuario.tipo}`}>Editar</Link></button>
+                            <button onClick={()=>selecionarFuncionarioExcluir(usuario.nome,usuario._id)}>Excluir</button>
                             <br/><br/>
                         </div>
                     ))

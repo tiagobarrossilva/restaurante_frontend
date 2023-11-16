@@ -13,11 +13,8 @@ function AdicionarAoCardapio(){
     const [item, setItem] = useState({})
     const {setFlashMessage} = useFlashMessage()
     const navigate = useNavigate();
-
-
     const [tipoItem, setTipoItem] = useState({})
     
-
     function handleChange(e){
         setItem({...item, [e.target.name]: e.target.value})
     }
@@ -27,8 +24,6 @@ function AdicionarAoCardapio(){
         
         // enviar o item para o banco
         adicionarItem(item)
-        //console.log(tipoItem)
-        console.log(item)
     }
 
     async function adicionarItem(item){
@@ -45,7 +40,6 @@ function AdicionarAoCardapio(){
             return erro.response.data
         })
         setFlashMessage(data.message, msgType)
-        
     }
 
     return(
@@ -83,14 +77,6 @@ function AdicionarAoCardapio(){
                         haldleOnChange={handleChange}
                     />
 
-                    {/* <Input
-                        text="Tipo"
-                        type="Number"
-                        name="tipo"
-                        placeholder="Digite o tipo"
-                        haldleOnChange={handleChange}
-                    /> */}
-
                     <label>Tipo:</label><br/>
                     <select name={"tipo"} onChange={handleChange}>
                         <option defaultValue="0">...</option>
@@ -99,7 +85,6 @@ function AdicionarAoCardapio(){
                         <option value="3">Sobremesa</option>
                         <option value="4">Diversos</option>
                     </select>
-                    
                     <input type="submit" value="Adicionar item ao cardapio"/>
                 </form>
             </div>

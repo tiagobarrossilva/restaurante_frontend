@@ -56,7 +56,7 @@ function ItensCardapio(){
         }
     }
 
-    async function excluirItem(id){
+    async function excluir(id){
         let msgType = 'success'
         const data = await api.delete(`/item/${id}`,{
             headers: {
@@ -89,7 +89,7 @@ function ItensCardapio(){
 
             {modalExcluir &&
                 createPortal(
-                    <ModalExcluir tipoModal='itens' exibirModalExcluir={exibirModalExcluir} nome={modalItem}  id={modalIdItem} excluirItem={excluirItem}/>,
+                    <ModalExcluir tipoModal='itens' exibirModalExcluir={exibirModalExcluir} nome={modalItem}  id={modalIdItem} excluir={excluir}/>,
                     document.body
                 )
             }
@@ -112,7 +112,7 @@ function ItensCardapio(){
                         </div>
                     ))
                 }
-
+                
                 {itens.length === 0 && <p>não ha item cadastrado</p>}
             </div>
         </section>
