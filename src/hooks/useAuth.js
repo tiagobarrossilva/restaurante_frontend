@@ -48,7 +48,7 @@ export default function useAuth(){
         if(data.tipo === 1){
             navigate('/home-administrador')
         } else if(data.tipo === 2){
-            navigate('/home-garcon')
+            navigate('/home-garcom')
         } else if(data.tipo === 3){
             navigate('/home-caixa')
         } else if(data.tipo === 4){
@@ -85,7 +85,7 @@ export default function useAuth(){
         if(tipoUsuario == 1){
             navigate('/home-administrador')
         } else if(tipoUsuario == 2){
-            navigate('/home-garcon')
+            navigate('/home-garcom')
         } else if(tipoUsuario == 3){
             navigate('/home-caixa')
         } else if(tipoUsuario == 4){
@@ -111,7 +111,7 @@ export default function useAuth(){
             if(tipoUsuario == 1){
                 tipoUsuario = 'Administrador'
             } else if(tipoUsuario == 2){
-                tipoUsuario = 'Garçon'
+                tipoUsuario = 'Garçom'
             } else if(tipoUsuario == 3){
                 tipoUsuario = 'Caixa'
             } else if(tipoUsuario == 4){

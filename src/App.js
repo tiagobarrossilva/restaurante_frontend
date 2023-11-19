@@ -11,7 +11,7 @@ import Login from "./components/pages/Auth/Login";
 import Home from "./components/pages/Home";
 import Registrar from "./components/pages/Auth/Registrar";
 import HomeAdministrador from "./components/pages/Administrador/HomeAdministrador";
-import HomeGarcon from "./components/pages/Garcon/HomeGarcon";
+import HomeGarcom from "./components/pages/Garcom/HomeGarcom";
 import HomeCaixa from "./components/pages/Caixa/HomeCaixa";
 import HomeCozinha from "./components/pages/Cozinha/HomeCozinha";
 import Funcionarios from "./components/pages/Administrador/Funcionarios";
@@ -20,6 +20,9 @@ import AdicionarAoCardapio from "./components/pages/Administrador/AdicionarAoCar
 import ItensCardapio from "./components/pages/Administrador/ItensCardapio";
 import EditarItem from "./components/pages/Administrador/EditarItem";
 import EditarFuncionario from "./components/pages/Administrador/EditarFuncionario";
+import ItensCardapioGarcom from "./components/pages/Garcom/ItensCardapioGarcom";
+import AbrirVenda from "./components/pages/Garcom/AbrirVenda";
+import VendasAbertas from "./components/pages/Garcom/VendasAbertas";
 
 // contextos
 import { UserProvider } from "./context/UserContext";
@@ -36,7 +39,7 @@ function App() {
           <Route path="/registrar" element={<Registrar/>}/>
           <Route path="/funcionarios" element={<Funcionarios/>}/>
           <Route path="/home-administrador" element={<HomeAdministrador/>}/>
-          <Route path="/home-garcon" element={<HomeGarcon/>}/>
+          <Route path="/home-garcom" element={<HomeGarcom/>}/>
           <Route path="/home-caixa" element={<HomeCaixa/>}/>
           <Route path="/home-cozinha" element={<HomeCozinha/>}/>
           <Route path="/vendas" element={<Vendas/>}/>
@@ -44,6 +47,9 @@ function App() {
           <Route path="/itens-cardapio" element={<ItensCardapio/>}/>
           <Route path="/editar-item/:id/:nome/:descricao/:preco/:tipo" element={<EditarItem/>}/>
           <Route path="/editar-funcionario/:id/:nome/:tipo" element={<EditarFuncionario/>}/>
+          <Route path="/cardapio-garcom" element={<ItensCardapioGarcom/>}/>
+          <Route path="/abrir-venda" element={<AbrirVenda/>}/>
+          <Route path="/vendas-abertas" element={<VendasAbertas/>}/>
           <Route path="/" element={<Home/>}/>
         </Routes>
       </Container>

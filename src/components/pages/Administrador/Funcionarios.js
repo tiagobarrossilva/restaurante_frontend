@@ -97,7 +97,7 @@ function Funcionarios(){
                             <p>Id: {usuario._id}</p>
                             <p>Nome: {usuario.nome}</p>
                             {usuario.tipo == 1 && <p>Administrador</p>}
-                            {usuario.tipo == 2 && <p>Garçon</p>}
+                            {usuario.tipo == 2 && <p>Garçom</p>}
                             {usuario.tipo == 3 && <p>Caixa</p>}
                             {usuario.tipo == 4 && <p>Cozinha</p>}
                             <button ><Link to={`/editar-funcionario/${usuario._id}/${usuario.nome}/${usuario.tipo}`}>Editar</Link></button>

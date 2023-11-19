@@ -49,7 +49,7 @@ function Registrar(){
                 <select name={"tipo"} onChange={handleChange}>
                     <option defaultValue="0">...</option>
                     <option value="1">Administrador</option>
-                    <option value="2">Garçon</option>
+                    <option value="2">Garçom</option>
                     <option value="3">Caixa</option>
                     <option value="4">Cozinha</option>
                 </select>
