@@ -10,6 +10,7 @@ function HomeGarcom(){
                 <button ><Link to={`/vendas-abertas`}>Vendas abertas</Link></button>
                 <button ><Link to={`/vendas-fechadas`}>Vendas finalizadas</Link></button>
                 <button ><Link to={`/cardapio-garcom`}>Ver cardapio</Link></button>
+                
             </div>
         </section>
     )

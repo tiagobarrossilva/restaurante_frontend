@@ -3,6 +3,7 @@ import styles from "../../pages/Garcom/VendasAbertas.module.css"
 import { useState,useEffect } from "react"
 import api from "../../../utils/api"
 import useFlashMessage from '../../../hooks/useFlashMessage'
+import { Link } from "react-router-dom"
 
 // o useHistory foi removido da versão mais nova do react, usar: useNavigate
 import { useNavigate } from 'react-router-dom'
@@ -55,7 +56,7 @@ function VendasAbertas(){
                         <div key={venda.id}>
                             <p>Mesa: {venda._id}</p>
                             <button type="button">Exibir detalhes</button>
-                            <button type="button">Adicionar produto</button>
+                            <button ><Link to={`/adicionar-item-venda/${venda._id}`}>Adicionar produto</Link></button>
                             <button onClick={()=>fecharVenda(venda._id)}>Fechar venda</button>
                             <br/><br/>
                         </div>

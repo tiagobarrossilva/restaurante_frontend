@@ -24,6 +24,7 @@ import ItensCardapioGarcom from "./components/pages/Garcom/ItensCardapioGarcom";
 import AbrirVenda from "./components/pages/Garcom/AbrirVenda";
 import VendasAbertas from "./components/pages/Garcom/VendasAbertas";
 import VendasFechadas from "./components/pages/Garcom/VendasFechadas";
+import AdicionarItemVenda from "./components/pages/Garcom/AdicionarItemVenda";
 
 // contextos
 import { UserProvider } from "./context/UserContext";
@@ -52,6 +53,7 @@ function App() {
           <Route path="/abrir-venda" element={<AbrirVenda/>}/>
           <Route path="/vendas-abertas" element={<VendasAbertas/>}/>
           <Route path="/vendas-fechadas" element={<VendasFechadas/>}/>
+          <Route path="/adicionar-item-venda/:mesa" element={<AdicionarItemVenda/>}/>
           <Route path="/" element={<Home/>}/>
         </Routes>
       </Container>
