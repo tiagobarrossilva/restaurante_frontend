@@ -1,9 +1,6 @@
 import styles from "../../pages/Garcom/AdicionarItemVenda.module.css"
 import { useParams, Link } from 'react-router-dom'
-
 import useFlashMessage from '../../../hooks/useFlashMessage'
-
-//import styles from "../../pages/Garcom/ItensCardapioGarcom.module.css"
 import { useState,useEffect } from "react"
 import api from "../../../utils/api"
 import { createPortal } from 'react-dom'
@@ -17,7 +14,6 @@ function AdicionarItemVenda(){
     const [modalVerificarItens,setModalVerificarItens] = useState(false)
     const [token] = useState(localStorage.getItem('token') || '')
     const {setFlashMessage} = useFlashMessage()
-
 
     useEffect(() =>{
         api.get('/item',{
@@ -44,16 +40,16 @@ function AdicionarItemVenda(){
         setItem(itens2)
     }
 
-    function adicionarItem(id, nomeItem, preco){
+    function adicionarItem(id, nome, preco){
         const quantidade = document.querySelector('#quantidade'+id).value
-        const itemAdicionado = {item: id, quantidade: quantidade,nomeItem: nomeItem, preco: preco}
+        const itemAdicionado = {id, quantidade, nome, preco}
         console.log(listaAdicionados.length)
         const itensAtualizados = [...listaAdicionados,itemAdicionado]
         setListaAdicionados(itensAtualizados)
         
         const input = document.querySelector('#quantidade'+id)
         input.value = "1"
-        setFlashMessage('Adicionado: '+nomeItem+' , '+'Quantidade: '+quantidade,'success')
+        setFlashMessage('Adicionado: '+nome+' , '+'Quantidade: '+quantidade,'success')
     }
 
     function verificar(){
@@ -78,8 +74,6 @@ function AdicionarItemVenda(){
         setModalVerificarItens(false)
     }
 
-
-    
     return(
         <section className={styles.AdicionarItemVenda}>
 
@@ -92,13 +86,13 @@ function AdicionarItemVenda(){
 
             <h1>Adicionar item a mesa: {mesa}</h1>
             <div>
-                <button>Confirmar seleção de itens</button>
                 <button onClick={verificar}>verificar</button>
                 <button onClick={limparSelecao}>Limpar seleção</button>
             </div>
 
-            <h2>Cardapio</h2>
-            <div className="elementosPaginaItens">
+            
+            <div>
+                <h2>Cardapio</h2>
                 <button onClick={selecionarTodos}>Todos</button>
                 <button onClick={()=> selecionarItens(1)}>Comidas</button>
                 <button onClick={()=> selecionarItens(2)}>Bebidas</button>
@@ -106,7 +100,7 @@ function AdicionarItemVenda(){
                 <button onClick={()=> selecionarItens(4)}>Diversos</button>
             </div>
 
-            <div className="elementosPaginaItens">
+            <div>
                 {itens.length > 0 &&
                     itens.map((item) =>(
                         <div key={item.id}>
@@ -130,11 +124,8 @@ function AdicionarItemVenda(){
                 
                 {itens.length === 0 && <p>não ha item cadastrado</p>}
             </div>
-            
-
         </section>
     )
-
 }
 
 export default AdicionarItemVenda
