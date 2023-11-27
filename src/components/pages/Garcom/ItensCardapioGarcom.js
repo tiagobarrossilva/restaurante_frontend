@@ -1,8 +1,6 @@
 import styles from "../../pages/Garcom/ItensCardapioGarcom.module.css"
-
 import { useState,useEffect } from "react"
 import api from "../../../utils/api"
-
 
 function ItensCardapioGarcom(){
     const [itens,setItem] = useState([])

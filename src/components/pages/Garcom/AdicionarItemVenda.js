@@ -43,7 +43,7 @@ function AdicionarItemVenda(){
     function adicionarItem(id, nome, preco){
         const quantidade = document.querySelector('#quantidade'+id).value
         const itemAdicionado = {id, quantidade, nome, preco}
-        console.log(listaAdicionados.length)
+        
         const itensAtualizados = [...listaAdicionados,itemAdicionado]
         setListaAdicionados(itensAtualizados)
         
@@ -79,7 +79,7 @@ function AdicionarItemVenda(){
 
             {modalVerificarItens &&
                 createPortal(
-                    <ModalVerificarItens ocultarModal={ocultarModal} listaAdicionados={listaAdicionados} setListaAdicionados={setListaAdicionados}/>,
+                    <ModalVerificarItens exibirModal={exibirModal} ocultarModal={ocultarModal} listaAdicionados={listaAdicionados} setListaAdicionados={setListaAdicionados}/>,
                     document.body
                 )
             }
@@ -90,7 +90,6 @@ function AdicionarItemVenda(){
                 <button onClick={limparSelecao}>Limpar seleção</button>
             </div>
 
-            
             <div>
                 <h2>Cardapio</h2>
                 <button onClick={selecionarTodos}>Todos</button>
