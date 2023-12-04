@@ -6,6 +6,9 @@ import api from "../../../utils/api"
 import { createPortal } from 'react-dom'
 import ModalVerificarItens from "../../modal/ModalVerificarItens"
 
+// o useHistory foi removido da versão mais nova do react, usar: useNavigate
+import { useNavigate } from 'react-router-dom'
+
 function AdicionarItemVenda(){
     const {mesa} = useParams()
     const [itens,setItem] = useState([])
@@ -14,6 +17,7 @@ function AdicionarItemVenda(){
     const [modalVerificarItens,setModalVerificarItens] = useState(false)
     const [token] = useState(localStorage.getItem('token') || '')
     const {setFlashMessage} = useFlashMessage()
+    const navigate = useNavigate();
 
     useEffect(() =>{
         api.get('/item',{
@@ -74,12 +78,28 @@ function AdicionarItemVenda(){
         setModalVerificarItens(false)
     }
 
+    async function efetuarPedido(pedido){
+        let msgType = 'success'
+        const data = await api.patch(`/venda/pedido/${mesa}`,pedido,{
+            headers: {
+                Authorization: `Bearer ${JSON.parse(token)}`,
+            },
+        }).then((response) =>{
+            navigate('/home-garcom')
+            return response.data
+        }).catch((erro)=>{
+            msgType = 'error'
+            return erro.response.data
+        })
+        setFlashMessage(data.message, msgType)
+    }
+
     return(
         <section className={styles.AdicionarItemVenda}>
 
             {modalVerificarItens &&
                 createPortal(
-                    <ModalVerificarItens exibirModal={exibirModal} ocultarModal={ocultarModal} listaAdicionados={listaAdicionados} setListaAdicionados={setListaAdicionados}/>,
+                    <ModalVerificarItens efetuarPedido={efetuarPedido} exibirModal={exibirModal} ocultarModal={ocultarModal} listaAdicionados={listaAdicionados} setListaAdicionados={setListaAdicionados}/>,
                     document.body
                 )
             }

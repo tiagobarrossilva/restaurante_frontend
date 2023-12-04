@@ -54,7 +54,7 @@ function VendasAbertas(){
                     vendasAbertas.map((venda) =>(
                         <div key={venda.id}>
                             <p>Mesa: {venda._id}</p>
-                            <button type="button">Exibir detalhes</button>
+                            <button ><Link to={`/detalhes-venda/${venda._id}`}>Exibir detalhes</Link></button>
                             <button ><Link to={`/adicionar-item-venda/${venda._id}`}>Adicionar produto</Link></button>
                             <button onClick={()=>fecharVenda(venda._id)}>Fechar venda</button>
                             <br/><br/>

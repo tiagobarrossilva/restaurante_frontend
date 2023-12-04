@@ -1,27 +1,18 @@
 import styles from "../../components/modal/ModalVerificarItens.module.css"
 
-function ModalVerificarItens({exibirModal,ocultarModal,listaAdicionados, setListaAdicionados}){
+function ModalVerificarItens({efetuarPedido,exibirModal,ocultarModal,listaAdicionados, setListaAdicionados}){
 
     function excluirItem(id){
-        
-        
+         
         //const itensAtualizados = listaAdicionados.filter((listaAdicionados)=> listaAdicionados.id != id)
-
-        
-        
-
         let itensAtualizados = listaAdicionados
         itensAtualizados.splice(id,1)
         
-        
-
         //{x = listaAdicionados.findIndex((itemIndex)=> itemIndex == item)}
 
         const itensAtualizados2 = itensAtualizados.filter((itensAtualizados)=> itensAtualizados.id)
         setListaAdicionados(itensAtualizados2)
         console.log(itensAtualizados2)
-        
-        
     }
 
     function agruparItens(){
@@ -64,10 +55,13 @@ function ModalVerificarItens({exibirModal,ocultarModal,listaAdicionados, setList
             }
         }
 
-        console.log(resultadoAgrupado)
+        const pedido ={
+        "pedido": resultadoAgrupado
+        }
+        
+        console.log(pedido)
+        efetuarPedido(pedido)
     }
-
-    // let x
 
     return(
         <div className={styles.ModalVerificarItens}>
