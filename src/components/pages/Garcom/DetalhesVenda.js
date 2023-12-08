@@ -10,6 +10,7 @@ function DetalhesVenda(){
     const {mesa} = useParams()
     const [token] = useState(localStorage.getItem('token') || '')
     const [pedidos,setPedidos] = useState([])
+    const [venda,setVendas] = useState([])
 
 
     useEffect(() =>{
@@ -19,12 +20,15 @@ function DetalhesVenda(){
             },
         }).then((response) =>{
             setPedidos(response.data.vendas.pedidos)
+            setVendas(response.data.vendas)
         })
     }, [token])
 
     return(
         <section >
             <h1>Detalhes da mesa {mesa}</h1>
+            <h3>Situação: {venda.situacao}</h3>
+            
             <div >
                 {pedidos.length > 0 &&
                     pedidos.map((pedido) =>(
