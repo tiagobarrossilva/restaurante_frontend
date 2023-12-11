@@ -11,6 +11,7 @@ function DetalhesVenda(){
     const [token] = useState(localStorage.getItem('token') || '')
     const [pedidos,setPedidos] = useState([])
     const [venda,setVendas] = useState([])
+    let precoTotal = 0
 
 
     useEffect(() =>{
@@ -36,16 +37,23 @@ function DetalhesVenda(){
                             <p>Codigo do item: {pedido._id}</p>
                             <p>Item: {pedido.nome}</p>
                             <p>Quantidade: {pedido.quantidade}</p>
+                            <p>Preco unitario: {pedido.preco}</p>
                             {pedido.preparado == true && <p>Já foi preparado</p>}
                             {pedido.preparado == false && <p>Aguardando preparo</p>}
+
+                            <div className={styles.calculoPreco}>
+                                {precoTotal = (pedido.preco * pedido.quantidade) + precoTotal}
+                            </div>
                             
                             <br/><br/>
                         </div>
                     ))
+                    
                 }
                 
                 {pedidos.length === 0 && <p>Sem pedidos</p>}
             </div>
+            <h4>Preço total: {precoTotal}</h4>
         </section>
     )
 }

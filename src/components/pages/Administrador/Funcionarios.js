@@ -73,14 +73,17 @@ function Funcionarios(){
 
     return(
         <section className={styles.Funcionarios}>
-            <h1>Gerenciamento de Funcionarios</h1>
-            <p>{<Link to="/registrar">Cadastrar novo funcionario</Link>}</p>
+
+            <h1 className={styles.title}>GERENCIAMENTO DE FUNCIONARIOS</h1>
+
+            <p>{<Link to="/registrar" className={styles.btnAdd}>+Cadastrar novo funcionario</Link>}</p>
+
             <div className="elementosPaginaItens">
-                <button onClick={selecionarTodos}>Todos</button>
-                <button onClick={()=> selecionarUsuarios(1)}>Administrador</button>
-                <button onClick={()=> selecionarUsuarios(2)}>Garçon</button>
-                <button onClick={()=> selecionarUsuarios(3)}>Caixa</button>
-                <button onClick={()=> selecionarUsuarios(4)}>Cozinha</button>
+                <button onClick={selecionarTodos} className={styles.btnOp}>Todos</button>
+                <button onClick={()=> selecionarUsuarios(1)} className={styles.btnOp}>Administrador</button>
+                <button onClick={()=> selecionarUsuarios(2)} className={styles.btnOp}>Garçon</button>
+                <button onClick={()=> selecionarUsuarios(3)} className={styles.btnOp}>Caixa</button>
+                <button onClick={()=> selecionarUsuarios(4)} className={styles.btnOp}>Cozinha</button>
             </div>
 
             {modalExcluir &&
@@ -90,18 +93,25 @@ function Funcionarios(){
                 )
             }
 
-            <div className="elementosPaginaUsuarios">
+            <div className={styles.elementosPaginaItens}>
                 {usuarios.length > 0 &&
                     usuarios.map((usuario) =>(
-                        <div key={usuario.id}>
+                        <div key={usuario.id} className={styles.PaginaItens}>
                             <p>Id: {usuario._id}</p>
                             <p>Nome: {usuario.nome}</p>
                             {usuario.tipo == 1 && <p>Administrador</p>}
                             {usuario.tipo == 2 && <p>Garçom</p>}
                             {usuario.tipo == 3 && <p>Caixa</p>}
                             {usuario.tipo == 4 && <p>Cozinha</p>}
-                            <button ><Link to={`/editar-funcionario/${usuario._id}/${usuario.nome}/${usuario.tipo}`}>Editar</Link></button>
-                            <button onClick={()=>selecionarFuncionarioExcluir(usuario.nome,usuario._id)}>Excluir</button>
+                            
+                            <div className={styles.btnS}>
+                                <button>
+                                    <Link to={`/editar-funcionario/${usuario._id}/${usuario.nome}/${usuario.tipo}`} className={styles.btnEditar}>Editar</Link>
+                                </button>
+                            
+                                <button onClick={()=>selecionarFuncionarioExcluir(usuario.nome,usuario._id)} className={styles.btnExcluir}>Excluir</button>
+                            </div>
+                            
                             <br/><br/>
                         </div>
                     ))

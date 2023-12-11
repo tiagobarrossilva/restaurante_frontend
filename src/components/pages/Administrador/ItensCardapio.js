@@ -77,45 +77,54 @@ function ItensCardapio(){
     
     return(
         <section>
-            <div className={styles.ItensCardapio}>
-                <h1>listagem itens cardapio</h1><br/>
-                <p>{<Link to="/adicionar-ao-cardapio">Adicionar item ao cardapio</Link>}</p><br/>
-                <div className="elementosPaginaItens">
-                    <button onClick={selecionarTodos}>Todos</button>
-                    <button onClick={()=> selecionarItens(1)}>Comidas</button>
-                    <button onClick={()=> selecionarItens(2)}>Bebidas</button>
-                    <button onClick={()=> selecionarItens(3)}>Sobremesas</button>
-                    <button onClick={()=> selecionarItens(4)}>Diversos</button>
-                </div>
+            <h1 className={styles.title}>LISTAGEM ITENS CARDAPIO</h1><br/>
 
-                {modalExcluir &&
-                    createPortal(
-                        <ModalExcluir tipoModal='itens' exibirModalExcluir={exibirModalExcluir} nome={modalItem}  id={modalIdItem} excluir={excluir}/>,
-                        document.body
-                    )
-                }
+            <p>
+                <Link to="/adicionar-ao-cardapio" className={styles.btnAdd}>+Add ao cardápio</Link>
+            </p>
 
-                <div >
-                    {itens.length > 0 &&
-                        itens.map((item) =>(
-                            <div key={item.id}>
-                                <p>Id: {item._id}</p>
-                                <p>Nome: {item.nome}</p>
-                                <p>Descrição: {item.descricao}</p>
-                                <p>Preço: {item.preco}</p>
-                                {item.tipo == 1 && <p>Comida</p>}
-                                {item.tipo == 2 && <p>Bebida</p>}
-                                {item.tipo == 3 && <p>Sobremesa</p>}
-                                {item.tipo == 4 && <p>Diversos</p>}
-                                <button ><Link to={`/editar-item/${item._id}/${item.nome}/${item.descricao}/${item.preco}/${item.tipo}`}>Editar</Link></button>
-                                <button className={styles.botaoExcluir} onClick={()=>selecionarItemExcluir(item.nome,item._id)}>Excluir</button>
-                                <br/><br/>
+            <div>
+                <button onClick={selecionarTodos} className={styles.btnOp}>Todos</button>
+                <button onClick={()=> selecionarItens(1)} className={styles.btnOp}>Comidas</button>
+                <button onClick={()=> selecionarItens(2)} className={styles.btnOp}>Bebidas</button>
+                <button onClick={()=> selecionarItens(3)} className={styles.btnOp}>Sobremesas</button>
+                <button onClick={()=> selecionarItens(4)} className={styles.btnOp}>Diversos</button>
+            </div>
+
+            {modalExcluir &&
+                createPortal(
+                    <ModalExcluir tipoModal='itens' exibirModalExcluir={exibirModalExcluir} nome={modalItem}  id={modalIdItem} excluir={excluir}/>,
+                    document.body
+                )
+            }
+
+            <div className={styles.elementosPaginaItens}>
+                {itens.length > 0 &&
+                    itens.map((item) =>(
+                        <div key={item.id} className={styles.PaginaItens}>
+                            <p>Id: {item._id}</p>
+                            <p>Nome: {item.nome}</p>
+                            <p>Descrição: {item.descricao}</p>
+                            <p>Preço: {item.preco}</p>
+                            {item.tipo == 1 && <p>Comida</p>}
+                            {item.tipo == 2 && <p>Bebida</p>}
+                            {item.tipo == 3 && <p>Sobremesa</p>}
+                            {item.tipo == 4 && <p>Diversos</p>}
+
+                            <div className={styles.btnS}>
+                                <button>
+                                    <Link to={`/editar-item/${item._id}/${item.nome}/${item.descricao}/${item.preco}/${item.tipo}`} className={styles.btnEditar}>Editar</Link>
+                                </button>
+                            
+                                <button onClick={()=>selecionarItemExcluir(item.nome,item._id)} className={styles.btnExcluir}>Excluir</button>
                             </div>
-                        ))
-                    }
-                    
-                    {itens.length === 0 && <p>não ha item cadastrado</p>}
-                </div>
+
+                            <br/><br/>
+                        </div>
+                    ))
+                }
+                
+                {itens.length === 0 && <p>não ha item cadastrado</p>}
             </div>
         </section>
     )

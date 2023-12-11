@@ -1,7 +1,121 @@
-.ItensCardapio button{
-   
+.btnS{
+    text-align: center;
 }
 
-.botaoExcluir {
-    background-color: red;
+.btnExcluir {
+    display: inline-block;
+    padding: 10px 20px;
+    font-size: 16px;
+    font-weight: bold;
+    text-align: center;
+    text-decoration: none;
+    cursor: pointer;
+    border: none;
+    color: #ffffff; /* Cor do texto */
+    background-color: #db3c34; /* Cor de fundo padrão */
+    border-radius: 5px; /* Cantos arredondados */
+    transition: background-color 0.3s ease; /* Transição suave de cor de fundo */
+}
+/* Estilo quando o cursor está sobre o botão */
+.btnExcluir:hover {
+    background-color: #aa0c04; /* Cor de fundo ao passar o mouse */
+    color: #ffffff; /* Cor do texto ao passar o mouse */
+}
+
+/* Estilo quando o botão está pressionado (ativo) */
+.btnExcluir:active {
+    background-color: #aa0c04; /* Cor de fundo quando pressionado */
+    color: #ffffff; /* Cor do texto quando pressionado */
+}
+
+.btnOp {
+    display: inline-block;
+    padding: 10px 20px;
+    font-size: 16px;
+    text-align: center;
+    text-decoration: none;
+    color: #362803;
+    background-color: #ffffff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+/* Estilo quando o cursor está sobre o botão */
+.btnOp:hover {
+    background-color: #362803; /* Cor de fundo ao passar o mouse */
+    color: #ffffff; /* Cor do texto ao passar o mouse */
+}
+/* Estilo quando o botão está pressionado (ativo) */
+.btnOp:active {
+    background-color: #201701; /* Cor de fundo quando pressionado */
+    color: #ffffff; /* Cor do texto quando pressionado */
+}
+
+.elementosPaginaItens {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+.PaginaItens {
+    background-color: #dfdfdf;
+    padding: 20px;
+    margin: 10px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    width: 300px;
+    height: 200px;
+}
+
+.title{
+    text-align: center;
+    color: #362803;
+}
+
+button{
+    border: none;
+}
+.btnEditar {
+    display: inline-block;
+    padding: 10px 20px;
+    font-size: 16px;
+    text-align: center;
+    text-decoration: none;
+    color: #fff;
+    background-color: #362803;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+
+    /* Adicione estilo quando o cursor está sobre o link */
+    &:hover {
+        color: #362803;
+        background-color: #ffffff;
+    }
+}
+
+
+.btnAdd {
+    position:absolute;
+    top: 120px;
+    right: 30px;
+    display: inline-block;
+    padding: 10px 20px;
+    font-size: 16px;
+    text-align: center;
+    text-decoration: none;
+    color: #fff;
+    background-color: #25b456;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+
+    /* Adicione estilo quando o cursor está sobre o link */
+    &:hover {
+        background-color: #068633;
+    }
 }
