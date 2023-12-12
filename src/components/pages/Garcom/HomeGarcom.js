@@ -5,11 +5,19 @@ function HomeGarcom(){
     return(
         <section className={styles.HomeGarcom}>
             <h1>Home do garçom</h1>
-            <div>
-                <button ><Link to={`/abrir-venda`}>Abrir venda</Link></button>
-                <button ><Link to={`/vendas-abertas`}>Vendas abertas</Link></button>
-                <button ><Link to={`/vendas-fechadas`}>Vendas finalizadas</Link></button>
-                <button ><Link to={`/cardapio-garcom`}>Ver cardapio</Link></button>
+            <div className={styles.centralizar}>
+                <p>
+                    <Link to={`/abrir-venda`} className={styles.btnOp}>Abrir venda</Link>
+                </p>
+                <p>
+                    <Link to={`/vendas-abertas`} className={styles.btnOp}>Vendas abertas</Link>
+                </p>
+                <p>
+                    <Link to={`/vendas-fechadas`} className={styles.btnOp}>Vendas finalizadas</Link>
+                </p>
+                <p>
+                    <Link to={`/cardapio-garcom`} className={styles.btnOp}>Ver cardapio</Link>
+                </p>
                 
             </div>
         </section>

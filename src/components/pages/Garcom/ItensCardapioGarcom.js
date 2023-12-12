@@ -35,18 +35,18 @@ function ItensCardapioGarcom(){
     return(
         <section className={styles.ItensCardapioGarcom}>
             <h1>Cardapio</h1>
-            <div className="elementosPaginaItens">
-                <button onClick={selecionarTodos}>Todos</button>
-                <button onClick={()=> selecionarItens(1)}>Comidas</button>
-                <button onClick={()=> selecionarItens(2)}>Bebidas</button>
-                <button onClick={()=> selecionarItens(3)}>Sobremesas</button>
-                <button onClick={()=> selecionarItens(4)}>Diversos</button>
+            <div>
+                <button onClick={selecionarTodos} className={styles.btnOp}>Todos</button>
+                <button onClick={()=> selecionarItens(1)} className={styles.btnOp}>Comidas</button>
+                <button onClick={()=> selecionarItens(2)} className={styles.btnOp}>Bebidas</button>
+                <button onClick={()=> selecionarItens(3)} className={styles.btnOp}>Sobremesas</button>
+                <button onClick={()=> selecionarItens(4)} className={styles.btnOp}>Diversos</button>
             </div>
 
-            <div className="elementosPaginaItens">
+            <div className={styles.elementosPaginaItens}>
                 {itens.length > 0 &&
                     itens.map((item) =>(
-                        <div key={item.id}>
+                        <div key={item.id} className={styles.PaginaItens}>
                             <p>Id: {item._id}</p>
                             <p>Nome: {item.nome}</p>
                             <p>Descrição: {item.descricao}</p>

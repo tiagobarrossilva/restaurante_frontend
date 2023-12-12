@@ -1,3 +1,33 @@
-.HomeGarcom {
-    
+h1{
+    text-align: center;
+    color: #362803;
+}
+
+.centralizar{
+    align-items: center;
+}
+
+.btnOp {
+    display: inline-block;
+    position: relative;
+    padding: 10px 20px;
+    font-size: 16px;
+    text-align: center;
+    text-decoration: none;
+    color: #362803;
+    background-color: #ffffff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+/* Estilo quando o cursor está sobre o botão */
+.btnOp:hover {
+    background-color: #362803; /* Cor de fundo ao passar o mouse */
+    color: #ffffff; /* Cor do texto ao passar o mouse */
+}
+/* Estilo quando o botão está pressionado (ativo) */
+.btnOp:active {
+    background-color: #201701; /* Cor de fundo quando pressionado */
+    color: #ffffff; /* Cor do texto quando pressionado */
 }
