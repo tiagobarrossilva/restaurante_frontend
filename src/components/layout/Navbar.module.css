@@ -40,3 +40,8 @@
 .navbar li:hover > a {
     color: white;
 }
+
+ul span {
+    margin-left: 1rem;
+    font-weight: bold;
+}

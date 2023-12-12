@@ -38,9 +38,8 @@ function Navbar(){
                     {usuarioAutenticado.tipo == "Caixa" &&(
                         <Caixa/>
                     )}
-
-                    <li>{usuarioAutenticado.tipo}</li>
-                    <li>{usuarioAutenticado.nome}</li>
+                    <span>{usuarioAutenticado.tipo}</span>
+                    <span>{usuarioAutenticado.nome}</span>
                     <li onClick={logout}>Sair</li>
                 </>
                 )
