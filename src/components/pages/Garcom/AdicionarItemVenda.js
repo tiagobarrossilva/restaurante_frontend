@@ -106,23 +106,24 @@ function AdicionarItemVenda(){
 
             <h1>Adicionar item a mesa: {mesa}</h1>
             <div>
-                <button onClick={verificar}>verificar</button>
-                <button onClick={limparSelecao}>Limpar seleção</button>
+                <button onClick={verificar} className={styles.btnOp}>verificar</button>
+                <button onClick={limparSelecao} className={styles.btnOp}>Limpar seleção</button>
             </div>
 
-            <div>
-                <h2>Cardapio</h2>
-                <button onClick={selecionarTodos}>Todos</button>
-                <button onClick={()=> selecionarItens(1)}>Comidas</button>
-                <button onClick={()=> selecionarItens(2)}>Bebidas</button>
-                <button onClick={()=> selecionarItens(3)}>Sobremesas</button>
-                <button onClick={()=> selecionarItens(4)}>Diversos</button>
+            <div className={styles.s}>
+                <h2>Cardapio <hr></hr></h2>
+
+                <button onClick={selecionarTodos} className={styles.btnOp}>Todos</button>
+                <button onClick={()=> selecionarItens(1)} className={styles.btnOp}>Comidas</button>
+                <button onClick={()=> selecionarItens(2)} className={styles.btnOp}>Bebidas</button>
+                <button onClick={()=> selecionarItens(3)} className={styles.btnOp}>Sobremesas</button>
+                <button onClick={()=> selecionarItens(4)} className={styles.btnOp}>Diversos</button>
             </div>
 
-            <div>
+            <div className={styles.elementosPagina}>
                 {itens.length > 0 &&
                     itens.map((item) =>(
-                        <div key={item.id}>
+                        <div key={item.id} className={styles.PaginaVenda}>
                             <p>Id: {item._id}</p>
                             <p>Nome: {item.nome}</p>
                             <p>Descrição: {item.descricao}</p>
@@ -132,9 +133,9 @@ function AdicionarItemVenda(){
                             {item.tipo == 3 && <p>Sobremesa</p>}
                             {item.tipo == 4 && <p>Diversos</p>}
                             <div>
-                                <label>Quantidade</label>
-                                <input id={'quantidade'+item._id} placeholder="Quantidade" type="number" defaultValue={1}/>
-                                <button onClick={()=> adicionarItem(item._id, item.nome, item.preco)}>Adicionar</button>
+                                <label>Quantidade: </label>
+                                <input id={'quantidade'+item._id} placeholder="Quantidade" type="number" defaultValue={1} className={styles.label}/>
+                                <button onClick={()=> adicionarItem(item._id, item.nome, item.preco)} className={styles.btnAdd}>Adicionar</button>
                                 <br/><br/>
                             </div>
                         </div>

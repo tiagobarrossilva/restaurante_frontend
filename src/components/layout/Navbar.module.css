@@ -42,6 +42,24 @@
 }
 
 ul span {
-    margin-left: 1rem;
+
     font-weight: bold;
+}
+
+
+.btnSair {
+    padding: 10px 20px;
+    font-size: 16px;
+    font-weight: bold;
+    text-align: center;
+    text-decoration: none;
+    cursor: pointer;
+    border: none;
+    color: #ffffff; /* Cor do texto */
+    background-color: #aa0c04; /* Cor de fundo padrão */
+    border-radius: 5px; /* Cantos arredondados */
+    transition: background-color 0.3s ease; /* Transição suave de cor de fundo */
+}
+.s{
+    margin-right: 15px;
 }

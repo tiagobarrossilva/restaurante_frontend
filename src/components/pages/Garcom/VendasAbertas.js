@@ -45,18 +45,26 @@ function VendasAbertas(){
     }
 
     return(
-        <section className={styles.vendasAbertas}>
+        <section className={styles.VendasAbertas}>
             
-            <p>vendas abertas</p>
+            <h1>vendas abertas</h1>
 
-            <div className="VendasAbertas">
+            <div className={styles.elementos}>
                 {vendasAbertas.length > 0 &&
                     vendasAbertas.map((venda) =>(
-                        <div key={venda.id}>
-                            <p>Mesa: {venda._id}</p>
-                            <button ><Link to={`/detalhes-venda/${venda._id}`}>Exibir detalhes</Link></button>
-                            <button ><Link to={`/adicionar-item-venda/${venda._id}`}>Adicionar produto</Link></button>
-                            <button onClick={()=>fecharVenda(venda._id)}>Fechar venda</button>
+                        <div key={venda.id} className={styles.PaginaItens}>
+                            <h1>Mesa: {venda._id}</h1>
+                            <hr></hr>
+                            <p>
+                                <Link to={`/detalhes-venda/${venda._id}`} className={styles.btnOp}>Exibir detalhes</Link>
+                            </p>
+                               
+                            <p>
+                                <Link to={`/adicionar-item-venda/${venda._id}`} className={styles.btnOp}>Adicionar produto</Link>
+                            </p>
+                            
+                            <button onClick={()=>fecharVenda(venda._id)} className={styles.btnFechar}>Fechar venda</button>
+
                             <br/><br/>
                         </div>
                     ))

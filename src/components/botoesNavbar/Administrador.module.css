@@ -1,3 +1,16 @@
-.Administrador li{
+li{
     display: inline;
 }
+
+.conf{
+    display: inline;
+    padding: 30px;
+    position: fixed;
+    top: 10px;
+    left: 100px;
+}
+
+
+
+
+

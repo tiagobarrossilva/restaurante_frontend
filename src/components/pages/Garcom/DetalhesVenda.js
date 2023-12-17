@@ -28,23 +28,31 @@ function DetalhesVenda(){
     return(
         <section >
             <h1>Detalhes da mesa {mesa}</h1>
-            <h3>Situação: {venda.situacao}</h3>
             
-            <div >
+            <div className={styles.elementos}>
                 {pedidos.length > 0 &&
                     pedidos.map((pedido) =>(
-                        <div key={pedido.id}>
+                        <div key={pedido.id} className={styles.paginaItens}>
+
+                            <h3>Situação: {venda.situacao}</h3>
+
+                            <hr></hr>
                             <p>Codigo do item: {pedido._id}</p>
+                            <hr></hr>
                             <p>Item: {pedido.nome}</p>
+                            <hr></hr>
                             <p>Quantidade: {pedido.quantidade}</p>
+                            <hr></hr>
                             <p>Preco unitario: {pedido.preco}</p>
+                            <hr></hr>
                             {pedido.preparado == true && <p>Já foi preparado</p>}
                             {pedido.preparado == false && <p>Aguardando preparo</p>}
-
+                            
                             <div className={styles.calculoPreco}>
                                 {precoTotal = (pedido.preco * pedido.quantidade) + precoTotal}
                             </div>
                             
+                            <h4>Preço total: {precoTotal}</h4>
                             <br/><br/>
                         </div>
                     ))
@@ -53,7 +61,7 @@ function DetalhesVenda(){
                 
                 {pedidos.length === 0 && <p>Sem pedidos</p>}
             </div>
-            <h4>Preço total: {precoTotal}</h4>
+            
         </section>
     )
 }

@@ -65,11 +65,12 @@ function ModalVerificarItens({efetuarPedido,exibirModal,ocultarModal,listaAdicio
 
     return(
         <div className={styles.ModalVerificarItens}>
-            <p>Confira os itens antes de submeter</p>
-            <button onClick={ocultarModal}>Voltar</button>
-            <button onClick={agruparItens}>Confirmar pedido</button>
-
-            <div className="elementosPaginaItens">
+            <h3>Confira os itens antes de submeter</h3>
+            <hr></hr>
+            <button onClick={ocultarModal} className={styles.btn}>Voltar</button>
+            <button onClick={agruparItens} className={styles.btnConfirmar}>Confirmar pedido</button>
+            
+            <div>
                 
                 {listaAdicionados.length > 0 &&
                     listaAdicionados.map((item) =>(
@@ -82,8 +83,10 @@ function ModalVerificarItens({efetuarPedido,exibirModal,ocultarModal,listaAdicio
                             <p>Preço unitario: {item.preco}</p>
                             <p>Quantidade: {item.quantidade}</p>
                             {/* <button onClick={()=> excluirItem(item.id)}>Excluir</button> */}
-                            <button onClick={()=> excluirItem(listaAdicionados.findIndex((itemIndex)=> itemIndex == item))}>Excluir</button>
+                            <button onClick={()=> excluirItem(listaAdicionados.findIndex((itemIndex)=> itemIndex == item))} 
+                            className={styles.btnExcluir}>Excluir</button>
                             <br/><br/>
+
                         </div>
                     ))
                 }

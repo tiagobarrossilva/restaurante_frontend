@@ -38,9 +38,10 @@ function Navbar(){
                     {usuarioAutenticado.tipo == "Caixa" &&(
                         <Caixa/>
                     )}
-                    <span>{usuarioAutenticado.tipo}</span>
-                    <span>{usuarioAutenticado.nome}</span>
-                    <li onClick={logout}>Sair</li>
+                    <span>{usuarioAutenticado.tipo}: </span>
+                    <span className={styles.s}>{usuarioAutenticado.nome}</span>
+                    
+                    <li onClick={logout} className={styles.btnSair}>Sair</li>
                 </>
                 )
                 :

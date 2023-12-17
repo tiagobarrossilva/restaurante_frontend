@@ -4,7 +4,7 @@ import { Link } from "react-router-dom"
 function Caixa(){
     return(
         <div className={styles.Caixa}>
-            <li><Link to="/teste-caixa">Icones do caixa</Link></li>
+            <li><Link to="/receber-pagamento">Receber pagamento</Link></li>
         </div>
     )
 }

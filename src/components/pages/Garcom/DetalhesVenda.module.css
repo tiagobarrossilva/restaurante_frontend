@@ -1,3 +1,26 @@
 .calculoPreco {
     display: none;
+    align-items: center;
+    position: absolute;
+    text-align: center;
+}
+
+.elementos {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+.paginaItens {
+    background-color: #dfdfdf;
+    padding: 20px;
+    margin: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    width: 400px;
+    height: 300px;
+}
+h4 p{
+    margin-bottom: 100px;
 }

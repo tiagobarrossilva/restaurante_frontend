@@ -1,10 +1,95 @@
 .ModalVerificarItens {
+    display: inline-block;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    padding: 20px;
+    margin: 10px;
+    text-align: center;
     position: absolute;
-    
     width: 30rem;
     height: 15rem;
-    background-color: chocolate;
-
+    background-color: #fff;
+    border-radius: 8px;
     top: 10rem;
     left: 30rem;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+
+}
+
+
+.btnExcluir {
+    padding: 10px 20px;
+    font-size: 16px;
+    font-weight: bold;
+    text-align: center;
+    text-decoration: none;
+    cursor: pointer;
+    border: none;
+    color: #ffffff; /* Cor do texto */
+    background-color: #db3c34; /* Cor de fundo padrão */
+    border-radius: 5px; /* Cantos arredondados */
+    transition: background-color 0.3s ease; /* Transição suave de cor de fundo */
+}
+/* Estilo quando o cursor está sobre o botão */
+.btnExcluir:hover {
+    background-color: #aa0c04; /* Cor de fundo ao passar o mouse */
+    color: #ffffff; /* Cor do texto ao passar o mouse */
+}
+
+/* Estilo quando o botão está pressionado (ativo) */
+.btnExcluir:active {
+    background-color: #aa0c04; /* Cor de fundo quando pressionado */
+    color: #ffffff; /* Cor do texto quando pressionado */
+}
+
+
+.btn {
+    padding: 10px 20px;
+    font-size: 16px;
+    font-weight: bold;
+    text-align: center;
+    text-decoration: none;
+    cursor: pointer;
+    border: none;
+    color: #362803; /* Cor do texto */
+    background-color: #ffffff; /* Cor de fundo padrão */
+    border-radius: 5px; /* Cantos arredondados */
+    transition: background-color 0.3s ease; /* Transição suave de cor de fundo */
+}
+/* Estilo quando o cursor está sobre o botão */
+.btn:hover {
+    background-color: #362803; /* Cor de fundo ao passar o mouse */
+    color: #ffffff; /* Cor do texto ao passar o mouse */
+}
+
+/* Estilo quando o botão está pressionado (ativo) */
+.btn:active {
+    background-color: #ffffff; /* Cor de fundo quando pressionado */
+    color: #362803; /* Cor do texto quando pressionado */
+}
+
+.btnConfirmar {
+    padding: 10px 20px;
+    font-size: 16px;
+    font-weight: bold;
+    text-align: center;
+    text-decoration: none;
+    cursor: pointer;
+    border: none;
+    color: #35b100; /* Cor do texto */
+    background-color: #ffffff; /* Cor de fundo padrão */
+    border-radius: 5px; /* Cantos arredondados */
+    transition: background-color 0.3s ease; /* Transição suave de cor de fundo */
+}
+/* Estilo quando o cursor está sobre o botão */
+.btnConfirmar:hover {
+    background-color: #35b100; /* Cor de fundo ao passar o mouse */
+    color: #ffffff; /* Cor do texto ao passar o mouse */
+}
+
+/* Estilo quando o botão está pressionado (ativo) */
+.btnConfirmar:active {
+    background-color: #ffffff; /* Cor de fundo quando pressionado */
+    color: #35b100; /* Cor do texto quando pressionado */
 }

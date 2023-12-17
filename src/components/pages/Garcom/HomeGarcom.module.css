@@ -1,10 +1,12 @@
 h1{
     text-align: center;
     color: #362803;
+    margin-bottom: 100px;
 }
 
 .centralizar{
     align-items: center;
+    text-align: center;
 }
 
 .btnOp {
