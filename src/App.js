@@ -29,6 +29,7 @@ import DetalhesVenda from "./components/pages/Garcom/DetalhesVenda";
 import ReceberPagamento from "./components/pages/Caixa/ReceberPagamento";
 import VendaFechadaDetalhes from "./components/pages/Caixa/VendaFechadaDetalhes";
 import PagamentoConfirmado from "./components/pages/Caixa/PagamentoConfirmado";
+import RelarorioVendas from "./components/pages/Administrador/RelatorioVendas";
 
 // contextos
 import { UserProvider } from "./context/UserContext";
@@ -62,6 +63,7 @@ function App() {
           <Route path="/receber-pagamento" element={<ReceberPagamento/>}/>
           <Route path="/venda-fechada-detalhes/:mesa" element={<VendaFechadaDetalhes/>}/>
           <Route path="/pagamento-confirmado/:mesa/:valorTotal/:valorRecebido/:troco" element={<PagamentoConfirmado/>}/>
+          <Route path="/relatorio-vendas/:data" element={<RelarorioVendas/>}/>
           <Route path="/" element={<Home/>}/>
         </Routes>
       </Container>
