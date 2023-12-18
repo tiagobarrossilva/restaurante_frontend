@@ -29,7 +29,7 @@ function Navbar(){
             <ul>
                 {authenticated ? (
                 <>
-                    <li onClick={homeUsuario}>Home</li>
+                    <li onClick={homeUsuario} className={styles.conf}>Home</li>
 
                     {usuarioAutenticado.tipo == "Administrador" &&(
                         <Administrador/>

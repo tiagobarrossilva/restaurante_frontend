@@ -53,7 +53,7 @@ function VendasAbertas(){
                 {vendasAbertas.length > 0 &&
                     vendasAbertas.map((venda) =>(
                         <div key={venda.id} className={styles.PaginaItens}>
-                            <h1>Mesa: {venda._id}</h1>
+                            <p className={styles.font}>Mesa: {venda._id}</p>
                             <hr></hr>
                             <p>
                                 <Link to={`/detalhes-venda/${venda._id}`} className={styles.btnOp}>Exibir detalhes</Link>

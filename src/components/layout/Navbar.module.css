@@ -42,7 +42,6 @@
 }
 
 ul span {
-
     font-weight: bold;
 }
 
@@ -62,4 +61,12 @@ ul span {
 }
 .s{
     margin-right: 15px;
+}
+
+
+.conf{
+    display: inline;
+    padding: 15px;
+    position:relative;
+    right: 400px;
 }

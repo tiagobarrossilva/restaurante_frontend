@@ -44,13 +44,18 @@ function VendasFechadas(){
         <section className={styles.VendasFechadas}>
             <h1>Vendas fechadas</h1>
 
-            <div className="VendasFechadas">
+            <div className={styles.elementos}>
                 {vendasFechadas.length > 0 &&
                     vendasFechadas.map((venda) =>(
-                        <div key={venda.id}>
+                        <div key={venda.id} className={styles.PaginaItens}>
                             <p>Mesa: {venda._id}</p>
-                            <button ><Link to={`/detalhes-venda/${venda._id}`}>Exibir detalhes</Link></button>
-                            <button onClick={()=> reabrirVenda(venda._id)}>Re-abrir venda</button>
+
+                            <p>
+                                <Link to={`/detalhes-venda/${venda._id}`} className={styles.btnLink}>Exibir detalhes</Link>
+                            </p>
+
+                            <button onClick={()=> reabrirVenda(venda._id)} className={styles.btn}>Re-abrir venda</button>
+
                             <br/><br/>
                         </div>
                     ))

@@ -5,9 +5,8 @@ li{
 .conf{
     display: inline;
     padding: 30px;
-    position: fixed;
-    top: 10px;
-    left: 100px;
+    position: relative;
+    right: 400px;
 }
 
 

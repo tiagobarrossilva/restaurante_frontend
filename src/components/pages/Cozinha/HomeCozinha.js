@@ -56,16 +56,16 @@ function HomeCozinha(){
                 <h1>Home da cozinha</h1>
             </div>
 
-            <div>
+            <div className={styles.elementos}>
                 {pedidos.length > 0 &&
                     pedidos.map((pedido) =>(
                         <div key={pedido.mesa}>                                                                
                             {pedido.pedidos.map((item) =>(
-                                <div>
+                                <div className={styles.PaginaItens}>
                                     <p>Mesa: {pedido.mesa}</p>
                                     <p>Item: {item.nome}</p>
                                     <p>Quantidade: {item.quantidade}</p>
-                                    <button onClick={()=>confirmarPreparo(pedido.mesa,item._id,item.quantidade)}>Confirmar preparo</button>
+                                    <button onClick={()=>confirmarPreparo(pedido.mesa,item._id,item.quantidade)} className={styles.btnOp}>Confirmar preparo</button>
                                     <br/><br/>
                                 </div>
                             ))}                                                                                                                               
